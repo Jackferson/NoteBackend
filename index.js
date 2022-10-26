@@ -10,8 +10,6 @@ app.use(express.json()) //Middleware
 
 app.use(routes);
 
-app.send('.')
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
