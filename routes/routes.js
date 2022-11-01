@@ -2,7 +2,7 @@ import { Router } from "express";
 import Post from "../models/post.js";
 const router = Router();
 
-router.get("/note/:email", async (req, res) => {
+router.get("/:email", async (req, res) => {
   try {
     let email = req.params.email;
     if (email === undefined) res.sendStatus(404);
@@ -13,10 +13,10 @@ router.get("/note/:email", async (req, res) => {
     res.sendStatus(404);
   }
 });
-router.get("/", async (req, res) => {
-  const posts = await Post.find();
-  res.json(posts);
-});
+// router.get("/", async (req, res) => {
+//   const posts = await Post.find();
+//   res.json(posts);
+// });
 
 router.post("/", async (req, res) => {
   try {
